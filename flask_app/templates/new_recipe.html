@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users and recipes</title>
+</head>
+<body>
+    <h1>Create your recipe</h1>
+    <form action="/create_recipe" method="post">
+        <p>
+            Recipe name:
+            <input type="text" name="recipe_name" id="">
+        </p>
+        <p>
+            Recipe Instructions:
+            <input type="text" name='recipe_instructions' id="">
+        </p>
+        <button>Create recipe</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message  in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
